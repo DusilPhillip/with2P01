@@ -17,34 +17,29 @@ namespace P02
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string cisla = "0123456789 ";
+            int i = 0;
+            foreach( Control ctrl in Controls)
+            {
+                if ( ctrl is Button)
+                {
+                    (ctrl as Button).Text = cisla[i].ToString();
+                    i++;
+
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = " ----- ";
-        }
+            char p = (sender as Button).Text[0];
+            string[] morseovka = { "-----",".----","..---","...--","....-",".....","-....","--...","---..","----.", };
+            int cislo = p - 48;
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = " .---- ";
-        }
+            textBox1.Text += morseovka[cislo] + " ";
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = " ..--- ";
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = " ...-- ";
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = " ....- ";
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = " ..... ";
         }
     }
 }
