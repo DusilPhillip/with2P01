@@ -52,5 +52,24 @@ namespace P03
             double a_prumer = (double)(soucet) / pocet;
             label1.Text = " Aritmetický půměr je:" + a_prumer;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int x = Convert.ToInt32(textBox1.Lines[0]);
+            int y = Convert.ToInt32(textBox1.Lines[1]);
+
+            
+
+            
+                int prom;
+                while (y != 0)
+                {
+                    prom = y;
+                    y = x % y;
+                    x = prom;
+                }
+            
+            MessageBox.Show("nejvetsi spolecny delitel je:" + x);
+        }
     }
 }
