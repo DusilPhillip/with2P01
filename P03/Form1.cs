@@ -22,6 +22,7 @@ namespace P03
             Random cis = new Random();
             int soucet = 0;
             int pocet = 0;
+            int i = 4;
             foreach ( Control ctrl in panel1.Controls)
             {
 
@@ -37,6 +38,15 @@ namespace P03
                         pocet++;
 
                     }
+                }
+               else if ( ctrl is RadioButton)
+                {
+                    (ctrl as RadioButton).Enabled = !(ctrl as RadioButton).Enabled;
+                }
+                else if ( ctrl is Button)
+                {
+                    i--;
+                    (ctrl as Button).Text = "T" + i;
                 }
             }
             double a_prumer = (double)(soucet) / pocet;
